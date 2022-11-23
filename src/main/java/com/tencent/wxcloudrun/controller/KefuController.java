@@ -1,5 +1,6 @@
 package com.tencent.wxcloudrun.controller;
 
+import com.tencent.wxcloudrun.dto.Msg;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,7 +12,7 @@ public class KefuController {
     @PostMapping(value = "/kefu/transfer")
     public Msg transfer(@RequestBody Msg msg) {
         Logger logger = LoggerFactory.getLogger(KefuController.class);
-        logger.info("get msg:", msg);
+        logger.info("get msg:", msg.toString());
         msg.setToUserName("oug-y5N0YNx5gREiOTO7sBciML-s");
         msg.setMsgType("transfer_customer_service");
         return msg;
