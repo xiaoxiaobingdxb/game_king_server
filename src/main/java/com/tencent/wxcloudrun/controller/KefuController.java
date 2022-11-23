@@ -13,7 +13,6 @@ public class KefuController {
     public Msg transfer(@RequestBody Msg msg) {
         Logger logger = LoggerFactory.getLogger(KefuController.class);
         logger.info("get msg: {}", msg);
-        msg.setFromUserName(msg.getToUserName());
         msg.setToUserName("oug-y5N0YNx5gREiOTO7sBciML-s");
         msg.setMsgType("transfer_customer_service");
         return msg;
