@@ -4,11 +4,11 @@ import lombok.Data;
 
 @Data
 public class Msg {
-    private String toUserName;
-    private String fromUserName;
-    private Long  createTime;
-    private String msgType;
-    private String content;
-    private Long msgId;
+    private String ToUserName;
+    private String FromUserName;
+    private Long  CreateTime;
+    private String MsgType;
+    private String Content;
+    private Long MsgId;
 
 }
