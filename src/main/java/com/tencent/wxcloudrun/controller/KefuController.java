@@ -15,7 +15,8 @@ public class KefuController {
         logger.info("from msg: {}", msg);
         msg.setMsgType("transfer_customer_service");
         msg.setFromUserName(msg.getToUserName());
-        msg.setToUserName("oug-y5N0YNx5gREiOTO7sBciML-s");
+        msg.setToUserName(msg.getFromUserName());
+        msg.setContent("change" + msg.getContent());
         logger.info("to msg: {}", msg);
         return msg;
     }
