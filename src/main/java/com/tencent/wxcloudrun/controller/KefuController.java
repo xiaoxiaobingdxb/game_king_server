@@ -14,8 +14,10 @@ public class KefuController {
         Logger logger = LoggerFactory.getLogger(KefuController.class);
         logger.info("from msg: {}", msg);
         msg.setMsgType("transfer_customer_service");
-        msg.setFromUserName(msg.getToUserName());
-        msg.setToUserName(msg.getFromUserName());
+        String from = msg.getFromUserName();
+        String to = msg.getToUserName();
+        msg.setFromUserName(to);
+        msg.setToUserName(from);
         msg.setContent("change" + msg.getContent());
         logger.info("to msg: {}", msg);
         return msg;
