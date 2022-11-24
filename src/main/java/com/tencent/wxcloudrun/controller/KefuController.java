@@ -12,9 +12,11 @@ public class KefuController {
     @PostMapping(value = "/kefu/transfer")
     public Msg transfer(@RequestBody Msg msg) {
         Logger logger = LoggerFactory.getLogger(KefuController.class);
-        logger.info("get msg: {}", msg);
-        msg.setToUserName("oug-y5N0YNx5gREiOTO7sBciML-s");
+        logger.info("from msg: {}", msg);
         msg.setMsgType("transfer_customer_service");
+        msg.setFromUserName(msg.getToUserName());
+        msg.setToUserName("oug-y5N0YNx5gREiOTO7sBciML-s");
+        logger.info("to msg: {}", msg);
         return msg;
     }
 }
